@@ -1,5 +1,59 @@
 // Assignment code here
 
+function generatePassword(){
+  var passwordLength = prompt("Select Password Length (please choose a number between 8 and 128)");
+  var number = parseInt(passwordLength);
+ 
+  
+  if (!isNaN(number) && number >=8 && number <= 128) {
+   CharacterTypes();
+
+  } else {
+    alert("Invalid Answer");
+  }
+
+}
+
+function CharacterTypes() {
+  let lowercase = confirm ("do you want to include lowercase characters?");
+  let uppercase = confirm ("do you want to include uppercase characters?");
+  let numeric = confirm ("do you want to include numeric characters?");
+  let special = confirm ("do you want to include special characters?");
+
+  if (!lowercase && !uppercase && !numeric && !special) {
+    alert("you must select at least one character type");
+    CharacterTypes();
+   } else {
+
+   }
+}
+
+function RandomWord(CharacterTypes) {
+  const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+  const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const numericChars = '0123456789';
+  const specialChars = '!@#$%^&*';
+
+  let pool = '';
+  if (CharacterTypes.lowercase) {
+    pool += lowercaseChars;
+  }
+  if (characterTypes.uppercase) {
+    pool += uppercaseChars;
+  }
+  if (characterTypes.numeric) {
+    pool += numericChars;
+  }
+  if (characterTypes.special) {
+    pool += specialChars;
+  }
+
+  let word = '';
+  for (let i = 0; i < number; i++) {
+    const randomIndex = Math.floor(Math.random() * pool.length);
+    word += pool[randomIndex];
+  }
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
