@@ -13,32 +13,33 @@ function generatePassword(){
   
     if (!lowercase && !uppercase && !numeric && !special) {
       alert("you must select at least one character type");
-     } else {
-       const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
-       const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-       const numericChars = '0123456789';
-       const specialChars = '!@#$%^&*';
-  
-       let pool = '';
-       if (lowercase) {
-         pool += lowercaseChars;
-       }
-       if (uppercase) {
-         pool += uppercaseChars;
-       }
-       if (numeric) {
-         pool += numericChars;
-       }
-       if (special) {
-         pool += specialChars;
-       }
-        let word = '';
-        for (let i = 0; i < number; i++) {
-          const randomIndex = Math.floor(Math.random() * pool.length);
-          word += pool[randomIndex];
-          console.log (word)
-          return word
-  }
+    } else {
+      const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+      const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const numericChars = '0123456789';
+      const specialChars = '!@#$%^&*';
+
+      let pool = '';
+      if (lowercase) {
+        pool += lowercaseChars;
+      }
+      if (uppercase) {
+        pool += uppercaseChars;
+      }
+      if (numeric) {
+        pool += numericChars;
+      }
+      if (special) {
+        pool += specialChars;
+      }
+      let word = '';
+      for (let i = 0; i < number; i++) {
+        const randomIndex = Math.floor(Math.random() * pool.length);
+        word += pool[randomIndex];
+      }
+
+      console.log (word)
+      return word
     }
 
   } else {
@@ -47,52 +48,6 @@ function generatePassword(){
   }
 }
 
-
-/*
-function RandomWord() {
-  let word = '';
-  for (let i = 0; i < number; i++) {
-    const randomIndex = Math.floor(Math.random() * pool.length);
-    word += pool[randomIndex];
-    console.log (word)
-    return word
-  }
-}
-*/
-
-/*
-function CharacterTypes() {
-  let lowercase = confirm ("do you want to include lowercase characters?");
-  let uppercase = confirm ("do you want to include uppercase characters?");
-  let numeric = confirm ("do you want to include numeric characters?");
-  let special = confirm ("do you want to include special characters?");
-
-  if (!lowercase && !uppercase && !numeric && !special) {
-    alert("you must select at least one character type");
-    CharacterTypes();
-   } else {
-     const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
-     const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-     const numericChars = '0123456789';
-     const specialChars = '!@#$%^&*';
-
-     let pool = '';
-     if (lowercase) {
-       pool += lowercaseChars;
-     }
-     if (uppercase) {
-       pool += uppercaseChars;
-     }
-     if (numeric) {
-       pool += numericChars;
-     }
-     if (special) {
-       pool += specialChars;
-     }
-     RandomWord();
-  }
-}
-*/
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
