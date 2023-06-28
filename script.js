@@ -1,17 +1,18 @@
 // Assignment code here
 
 function generatePassword(){
-  var passwordLength = prompt("Select Password Length (please choose a number between 8 and 128)");
+  var passwordLength = prompt("Select Password Length (Please choose a number between 8 and 128)");
   var number = parseInt(passwordLength);
  
   if (!isNaN(number) && number >=8 && number <= 128) {
-    let lowercase = confirm ("do you want to include lowercase characters?");
-    let uppercase = confirm ("do you want to include uppercase characters?");
-    let numeric = confirm ("do you want to include numeric characters?");
-    let special = confirm ("do you want to include special characters?");
+    let lowercase = confirm ("Do you want to include Lowercase Characters?");
+    let uppercase = confirm ("Do you want to include Uppercase Characters?");
+    let numeric = confirm ("Do you want to include Numeric Characters?");
+    let special = confirm ("Do you want to include Special Characters?");
   
     if (!lowercase && !uppercase && !numeric && !special) {
-      alert("you must select at least one character type");
+      alert("You must select at least one Character Type");
+      return null;
 
     } else {
       const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
@@ -46,8 +47,10 @@ function generatePassword(){
   
     else {
     alert("Invalid Answer");
-    return "try again"
+    return null;
+
   }
+  
 }
 
 
