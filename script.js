@@ -42,7 +42,13 @@ function generatePassword(){
       return word
     }
 
-  } else {
+  } else if (passwordLength === null) {
+    
+      return null;
+
+  }
+  
+    else {
     alert("Invalid Answer");
     return "try again"
   }
