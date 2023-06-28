@@ -24,36 +24,37 @@ function CharacterTypes() {
     alert("you must select at least one character type");
     CharacterTypes();
    } else {
+     const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+     const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+     const numericChars = '0123456789';
+     const specialChars = '!@#$%^&*';
 
-   }
+     let pool = '';
+     if (lowercase) {
+       pool += lowercaseChars;
+     }
+     if (uppercase) {
+       pool += uppercaseChars;
+     }
+     if (numeric) {
+       pool += numericChars;
+     }
+     if (special) {
+       pool += specialChars;
+     }
+     console.log(pool) 
+  }
 }
 
-function RandomWord(CharacterTypes) {
-  const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
-  const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  const numericChars = '0123456789';
-  const specialChars = '!@#$%^&*';
-
-  let pool = '';
-  if (CharacterTypes.lowercase) {
-    pool += lowercaseChars;
-  }
-  if (characterTypes.uppercase) {
-    pool += uppercaseChars;
-  }
-  if (characterTypes.numeric) {
-    pool += numericChars;
-  }
-  if (characterTypes.special) {
-    pool += specialChars;
-  }
+/*/function RandomWord(CharacterTypes) {
+  
 
   let word = '';
   for (let i = 0; i < number; i++) {
     const randomIndex = Math.floor(Math.random() * pool.length);
     word += pool[randomIndex];
   }
-}
+}*/
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
