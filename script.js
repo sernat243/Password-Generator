@@ -4,7 +4,6 @@ function generatePassword(){
   var passwordLength = prompt("Select Password Length (please choose a number between 8 and 128)");
   var number = parseInt(passwordLength);
  
-  
   if (!isNaN(number) && number >=8 && number <= 128) {
     let lowercase = confirm ("do you want to include lowercase characters?");
     let uppercase = confirm ("do you want to include uppercase characters?");
@@ -13,6 +12,7 @@ function generatePassword(){
   
     if (!lowercase && !uppercase && !numeric && !special) {
       alert("you must select at least one character type");
+
     } else {
       const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
       const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -37,15 +37,11 @@ function generatePassword(){
         const randomIndex = Math.floor(Math.random() * pool.length);
         word += pool[randomIndex];
       }
-
-      console.log (word)
-      return word
+      return word;
     }
 
   } else if (passwordLength === null) {
-    
       return null;
-
   }
   
     else {
